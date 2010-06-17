@@ -1,0 +1,15 @@
+call-template vs. apply templates vs. for-each
+
+match="a" (<a>1<b>2</b><c/>3</a>)
+  value-of select="."
+  value-of select="current()"
+  value-of select="self::node()"
+  value-of select="text()"
+  value-of select="../a"
+  apply-templates
+
+xsl:element
+xpath вверх по дереву.
+//node[1] vs. /descendant::node[1]
+варианты узнать, что данные узлы на самом деле один и тот же узел?
+тематические ресурсы

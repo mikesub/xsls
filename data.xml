@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+    <zero>
+        <item value="bacon"/>
+        <item vikings="on" value="spam"/>
+        <!-- optional><item value="eggs"/></optional -->
+    </zero>
+    <one>
+        <item vikings="on">spam</item>
+        <item>egg</item>
+        <item vikings="on">spam</item>
+        <item>sausage</item>
+    </one>
+    <two>
+        <item color="1">spam</item>
+        <item color="5">eggs</item>
+        <item color="2">sausage</item>
+        <item color="4">bacon</item>
+        <item color="3">baked beans</item>
+        <color id="1">red</color>
+        <color id="2">blue</color>
+        <color id="3">green</color>
+        <color id="4">brown</color>
+        <color id="5">black</color>
+    </two>
+    <three>
+        <flat>
+          <area name="россия"/>
+          <area name="таганрог"/>
+          <area name="киев"/>
+        </flat>
+        <tree>
+          <area name="россия">
+            <area name="москва"/>
+            <area name="таганрог"/>
+          </area>
+          <area name="украина">
+            <area name="киев"/>
+          </area>
+        </tree>
+    </three>
+    <four>
+        <number type="foo">15</number>
+        <number type="bar">8</number>
+        <number type="foo">4</number>
+        <number type="foo">16</number>
+        <number type="bar">42</number>
+        <number type="bar">23</number>
+    </four>
+    <five>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+    </five>
+</data>
