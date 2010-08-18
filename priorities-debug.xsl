@@ -7,5 +7,6 @@
   <xsl:template match="node/node"></xsl:template>
   <xsl:template match="node/node" priority="3000"></xsl:template>
   <xsl:template match="*"></xsl:template>
+  <xsl:template match="*[foo]"></xsl:template>
 
 </xsl:stylesheet>
