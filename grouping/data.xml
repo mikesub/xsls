@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+    <number type="foo">15</number>
+    <number type="bar">8</number>
+    <number type="foo">4</number>
+    <number type="foo">16</number>
+    <number type="bar">42</number>
+    <number type="bar">23</number>
+</data>

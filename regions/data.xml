@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+    <flat>
+        <area name="россия"/>
+        <area name="таганрог"/>
+        <area name="киев"/>
+    </flat>
+    <tree>
+        <area name="россия">
+            <area name="москва"/>
+            <area name="таганрог"/>
+        </area>
+        <area name="украина">
+            <area name="киев"/>
+        </area>
+    </tree>
+</data>
