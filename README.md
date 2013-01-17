@@ -1,7 +1,7 @@
 # Вёрстка против XSLT
 
 ## Никакой логики
-```mustache
+```jinja
 <vacancy>
   <header>{{ vacancy.name }}</header>
 	<paragraph>{{ vacancy.desc }}</paragraph>
@@ -10,7 +10,7 @@
 string.Template, CTemplate, Mustache, etc...
 
 ## Добавляем логику
-```django
+```jinja
 {% if vacancy.length %}
 <vacancies>
 	{% for vacancy in vacancies %}
@@ -25,7 +25,7 @@ string.Template, CTemplate, Mustache, etc...
 velocity, freemarker, genshi, smarty, django templates, jinja2, mako, shmako, ERB/eruby, template toolkit, JSP, PHP
 
 ## Добавляем логику аннотационно потому что у нас XML
-```xml
+```genshi
 <vacancies tpl:if="vacancy.length">
 	<vacancy tpl:for="vacancy in vacancies">
 		<header>${vacancy.name}</header>
@@ -36,7 +36,7 @@ velocity, freemarker, genshi, smarty, django templates, jinja2, mako, shmako, ER
 Genshi, TAL...
 
 ## За логикой идут остальные
-```xml
+```mako
 <vacancy tpl:for="idx, vacancy in enumerate(reversed(employer.vacancies))">
 	<header>${vacancy.name}</header>
 	<position>${len(employer.vacancies) - idx}</position>
@@ -58,7 +58,7 @@ Genshi, TAL...
 </%def>
 ```
 ## А теперь нечто совершенно иное
-```xml
+```xslt
 <xsl:template match="vacancy">
 	<xsl:copy>
 		<xsl:apply-templates/>
@@ -76,7 +76,7 @@ Genshi, TAL...
 </x:template>
 ```
 ## XML Path Language (XPath)
-```xml
+```xslt
 <xsl:template match="group/item" mode="layout">
 	<xsl:apply-templates select="current()[@foo!=preceding-sibling::item/@foo]"/>
 	<xsl:apply-templates select="/data/item[@id = current()/@id]">
@@ -85,7 +85,7 @@ Genshi, TAL...
 ```
 
 ## Повторное использование кода
-```xml
+```xslt
 <xsl:template match="list">
 	<xsl:element name="{@list-type}">
 		<xsl:apply-templates/>
@@ -105,23 +105,25 @@ Genshi, TAL...
 ```xml
 <wrap><wrap><wrap> text </wrap></wrap></wrap>
 ```
-```xml
+```xslt
 <xsl:template match="wrap">
 	<xsl:text>!&#160;</xsl:text>
 	<xsl:apply-templates/>
 	<xsl:text>&#160;!</xsl:text>
 </xsl:template>
 ```
-`! ! ! text ! ! !`
+```
+! ! ! text ! ! !
+```
 ## Реальная жизнь
 * неуправляемый xml:
-```xml
+```xslt
 <xsl:apply-templates match="*"/>
 ```
 * недопонимание декларативности: push vs. pull
 
 ## Я достану всё, что захочу
-```xml
+```xslt
 <xsl:template match="/">
 	<h1><xsl:value-of select="employer/title"/></h1>
 	<xsl:for-each select="employer/vacancies">
@@ -133,7 +135,7 @@ Genshi, TAL...
 </xsl:template>
 ```
 ## Ваши шаблоны - они как мои методы и функции
-```xml
+```xslt
 <xsl:template name="getParentNameIfHasChildren">
 	<xsl:with-param name="node">
 	<xsl:if test="$node/node()">
@@ -142,14 +144,14 @@ Genshi, TAL...
 </xsl:template>
 ```
 ## Можно все сделать через apply-templates. Зачем что-то еще?
-```xml
+```xslt
 <xsl:template match="*" mode="header">
 	<xsl:apply-templates select="." mode="header-firstpart"/>
 	<xsl:value-of select="/doc/data/title"/>
 </xsl:template>
 ```
 ## Какой же это шаблонизатор, если тут нету random() и uppercase()?
-```xml
+```xslt
 <func:function name="hh:isToday">
 	<xsl:param name="serverDateToCheck"/>
 	<xsl:variable name="userGMT" select="key('cookies', 'GMT') or 3"/>
